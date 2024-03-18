@@ -6,7 +6,7 @@ a
 b= pnorm(5,4,2)-pnorm(2,2,1)
 b
 
-pnorm(1.96)
+pnorm(1.96)  #cdf #cumulative probability density
 pnorm(4.96)
 pnorm(-1.96)
 
@@ -25,7 +25,7 @@ round(1.23233,2)
 plot(x)
 plot(x,type= "l")
 
-par(mfrow=c(2,2))
+par(mfrow=c(2,2))# multi_figer --mf
 hist(rnorm(10))
 hist(rnorm(100))
 hist(rnorm(1000))
@@ -62,6 +62,7 @@ lines(x,y3,lty=3,col="green")
 #legend(6,15,c("a","b","c"),col=c("red","blue","green"),lty=c(1,2,3))
 legend(2,24,c("y2","y1","y3"),col=c("red","blue","green"),lty=c(1,2,3))
 legend(2,24,c("y2","y1","y3"),col=c("red","blue","green"),lty=c(1,2,3))
+legend(2,24,c("y2","y1","y3"),col=c("red","blue","green"),lty=c(1,2,3),bty="n")
 
 
 
