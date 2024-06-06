@@ -32,4 +32,4 @@ print(data1)
 
 xdata= read.csv("abc.csv")
 xd=read.csv(choose.files())
-xd1=read.table(choose.files(),header=T, sep=(","))
+xd1=read.table(choose.files(),header=T, sep=(","))# check it again

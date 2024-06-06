@@ -2,6 +2,7 @@
 builtins()  #all function ***
 help(sqrt)  #for formula  ***
 getwd()
+#setwd()
 source("C:/Users/Asus/Desktop/my/STA361_ R/class r/class 01.R")
 
 
@@ -74,6 +75,7 @@ incomeans
 
 h= c(1:24)
 z=array(h,dim=c(3,4,2))
+dim(h)= c(3,4,2)
 z
 z[2,4,1] # R,C,MAT
 a=c(1,2,3)
@@ -109,6 +111,8 @@ incomes=c(60,49,36,90,70)
 
 incomef= factor(cut(incomes,breaks=35+10*(0:5)))  #how to work cut and factor?
 table(incomef,statef)
+table(incomef)
+table(statef)
 
 
 #class 5
@@ -241,13 +245,13 @@ if(x>y & x>z){
     print(sprintf("x =%f is the lowest value",x))
   }
 }else{
-  print(sprintf("Z is the Highst value", z))
+  print(sprintf("Z is the Highst value"))
   if(y>x){
-    print(sprintf("y  is the Middel value",y))
-    print(sprintf("x is the lowest value",x))
+    print(sprintf("y  is the Middel value"))
+    print(sprintf("x is the lowest value"))
   }else{
-    print(sprintf("x  is the Middel value",x))
-    print(sprintf("y  is the lowest value",y))
+    print(sprintf("x  is the Middel value"))
+    print(sprintf("y  is the lowest value"))
   }
 }
 
@@ -1021,6 +1025,16 @@ wcg= sum(grade_points*cdt)
 cgpa= wcg/sum(cdt)
 
 
+
+df=data.frame(scores,cdt)
+a=df[,1]
+grade <- get_grade_points(a)
+print(grade)
+
+wcgp= sum(grade*df[2])
+cgpa1= wcg/sum(cdt)
+
+
 #8c am
 x=c(5,6,7,8,9)
 l= length(x)
@@ -1055,7 +1069,173 @@ hist(data)
 plot(density(data))
 boxplot(data)
 
+#
+fahrenheit= function(x){
+  f= (9/5)*x +32
+  return(f)
+}
+c=0
+fahr= fahrenheit(c)
+fahr
+
+age= c(63,37,41,56)
+sex= c(1,1,0,1)
+cp= c(3,2,1,1)
+chol= c(233,250,204,236)
+thal =c(150,187,172,178)
+df1= data.frame(age,sex,cp,chol,thal)
+getwd()
+write.csv(df1,"C:/Users/Asus/Desktop/my/STA361_ R/class r/G.csv",row.names = FALSE)
+df2= read.csv("C:/Users/Asus/Desktop/my/STA361_ R/class r/G.csv")
+
+df2[,3]
+df2[3]
+df2[4]
+df2[1]
+hist(df2[,1])
+hist(df2[,4])
+plot(df2[,1],df2[,4])
+
+cor(df2[,1],df2[,4])
+cor(df2[1],df2[4])
+
+lm(df2[,4]~df2[,1])
+
+plot(df2[,1],df2[,4])
+m=lm(df2[,4]~df2[,1])
+abline(m, col = "red")
+
+A= matrix(df2[,4],2,2)
+# Calculate row totals
+row_totals <- rowSums(A)
+col_totals <- colSums(A)
+
+
+Height= c(142,143,144,149,151,153,157,159,160,165,167,172,174)
+Weight= c(42,42,42,45,48,49,50,52,53,58,62,65,67)
+df= data.frame(Height,Weight)
+write.csv(df,"C:/Users/Asus/Desktop/my/STA361_ R/class r/aa.csv",row.names = FALSE)
+df1=read.csv("C:/Users/Asus/Desktop/my/STA361_ R/class r/aa.csv")
+
+cr=cor(df1[1],df1[2])
+plot(df1[,2],df1[,1],xlab="w",ylab="h")
+a=df1[,1]
+b=df1[,2]
+plot(b,a,xlab="w",ylab="h")
+m= lm(a~b)
+abline(m)
+
+
+max_min= function(x){
+  max=x[1]
+  min=x[1]
+  n=length(x)
+  for(i in 1:n){
+    if(max<x[i]){
+      max=x[i]
+    }
+    if(min>x[i]){
+      min=x[i]
+    }
+  }
+  return(list(max1=max,min1=min))
+}
+
+aaa=c(12,12,23,4,23,22,11,10,44,15)
+aaa=df1[,1]
+max_min(aaa)
+
+
+p=.4
+n=5
+exl= dbinom(3,n,p)# exactly 3 survive
+
+cc= dbinom(5,n,p)+dbinom(4,n,p)+dbinom(3,n,p)+dbinom(2,n,p) # atleast 2
+cc
+mm=pbinom(5,n,p)- pbinom(1,n,p) # atleast 2 >>2,3,4,5
+mm
+
+mos= pbinom(2,n,p) #at most 2  #0,1,2
+mos
+
+non= dbinom(0,n,p) #none survive  #0,1,2
+non
+
+
+
+p=.4
+n=15
+exl= dbinom(5,n,p)# exactly 5 survive
+
+mm=pbinom(15,n,p)- pbinom(9,n,p) # atleast 10 >> p mean oi bindoo soho
+mm
+mm=pbinom(8,n,p)- pbinom(2,n,p) # 3 tp 8 >> p mean oi bindoo soho
+mm
+mos= pbinom(2,n,p) #at most 2  #0,1,2
+mos
+
+non= dbinom(0,n,p) #none survive  #0,1,2
+non
+
+
+
+x= rnorm(1000,100,225)
+p= pnorm(80,100,225)
+p
+p= pnorm(90,100,225)-pnorm(75,100,225) # binomial hole 74 hoto
+p
+
+q= qnorm(.05,100,225)
+q
+
+
+
+# Specify shape and rate parameters
+alpha <- 2
+beta <- 2
+
+# Generate a sequence of x values
+x <- seq(0, 20, length.out = 1000)
+
+# Calculate the PDF values for gamma distribution
+pdf_values <- dgamma(x, shape = alpha, rate = beta)
+
+# Plot the density curve
+plot(x, pdf_values, type = "l", lwd = 2, col = "blue",
+     main = "Density Curve for Gamma(2, 2)",
+     xlab = "X", ylab = "Density")
 
 
 
 
+
+# Generate a sequence of w values
+w <- seq(0, 100, by = 0.1)
+
+# Calculate the PDF values for the given w values
+pdf_values <- numeric(length(w))
+pdf_values[w < 40] <- 0
+pdf_values[w >= 40 & w < 65] <- w[w >= 40 & w < 65]^2
+pdf_values[w >= 65] <- 1
+
+# Plot the PDF
+plot(w, pdf_values, type = "l", lwd = 2, col = "blue",
+     main = "Piecewise PDF Function",
+     xlab = "w", ylab = "F(w)")
+
+
+
+# Generate a sequence of w values
+w <- seq(0, 100, by = 0.1)
+
+# Calculate the PDF values for the given w values
+pdf_values <- numeric(length(w))
+pdf_values[w < 40] <- 0
+pdf_values[w >= 40 & w <= 65] <- (w[w >= 40 & w <= 65]^2 - 80 * w[w >= 40 & w <= 65] + 1600) / 1250
+pdf_values[w > 65 & w <= 90] <- (-w[w > 65 & w <= 90]^2 + 180 * w[w > 65 & w <= 90] + 6850) / (1250 * 100)
+pdf_values[w > 90] <- 1
+
+# Plot the PDF
+plot(w, pdf_values, type = "l", lwd = 2, col = "blue",
+     main = "Piecewise PDF Function",
+     xlab = "w", ylab = "F(w)")

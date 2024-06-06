@@ -1,4 +1,4 @@
-#source(C:/Users/Asus/Desktop/my/STA361_ R/class r/class3.r)
+source("C:/Users/Asus/Desktop/my/STA361_ R/class r/class 01.R")
 
 getwd()
 gender = c(1,2,3,6,5,9)
@@ -38,9 +38,12 @@ assign("x",c(6,7,5))
 
 seq(0,100,3 )
 seq(from=0,to=100,by=3 )
+seq(length=5,from=0, by=3)
+seq(from=0,by=3 ,length= 5)
 rep(10,5)
 rep(1:3,5)
 rep(1:3,times=5)
+rep(c(1,2,3),times=5)
 rep(1:3,each=5)
 gd= c(rep(0,2),rep(1,5))
 gd

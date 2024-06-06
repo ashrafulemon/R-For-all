@@ -31,3 +31,4 @@ m[,c(1,4)]
 
 diag(c(5,4)) #diagonal mat
 diag(m)
+

@@ -4,7 +4,7 @@
 #chi- square
 
 
-a=rchisq(2000000,10)
+a=rchisq(20000,10) # 10 df
 plot(a)
 plot(density(a))
 
@@ -13,13 +13,13 @@ par(mfrow= c(2,2))
 a=rchisq(20,10)
 plot(density(a))
 
-a=rchisq(20,100000)
+a=rchisq(20,1000)
 plot(density(a))
 
-a=rchisq(2000000,10)
+a=rchisq(20000,10)
 plot(density(a))
 
-a=rchisq(2000000,100000)
+a=rchisq(20000,1000)
 plot(density(a))
 
 
@@ -86,7 +86,7 @@ for (i in 1:n){
   count1=0;
   for(j in 1:n1){
     lt[1]
-    if(lt[j]=="H"){
+    if(lt[j]=="h"){
       count1=count1+1
     }
   }
@@ -150,7 +150,7 @@ for( i in 1:(n_coin-1)){
 
 
 #regression
-
+#corelation coiffecient
 x=c(2,4,5,6,6,5,7,6,6,7)
 y=c(4,4,5,6,5,5,4,4,5,4) #not reletion
 y1= 2*x+5
@@ -159,7 +159,7 @@ y1= 2*x+5
 
 cor(x,y1)
 cor(x,y)
-
+rg=lm(y~x)
 a=function(b){
   
 }
@@ -180,8 +180,14 @@ for(i in 1:n){
   
 }
 v= spxy-(sx*sy)/n
-v1= sqrt((ssx-(sx^2)/n)(ssy-(sy^2)/n))
+v1= sqrt((ssx-(sx^2)/n)*(ssy-(sy^2)/n))
+v2= (ssx-(sx^2)/n)
 
+coef= v/v1
+r=coef
 
-
-
+b= v/v2
+b
+# ybar = a+ b xbar
+a= sy/n - (b)*(sx/n)
+a

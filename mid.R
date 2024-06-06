@@ -1,4 +1,4 @@
-x=c(5,6,7,8,9)
+x=c(5,6,7,8,9,8,9)
 l= length(x)
 sum=0
 for (i in 1:l){
@@ -6,6 +6,7 @@ for (i in 1:l){
 }
 Am= sum/l
 print(Am)
+
 
 x=seq(2,30,2)
 x
@@ -17,11 +18,16 @@ for (i in 1:l){
 print(sum)
 
 
+
+
 #assign(x,c(1,2,3))
 assign("x",c(1,2,3))
 
 x= seq(1,30,2)
 x
+
+
+
 
 x=1:16
 y=21:36

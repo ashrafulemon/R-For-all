@@ -30,7 +30,7 @@ sqrt(b)
 
 dnorm(x=.5, mean=1,sd=1)
 dnorm(x=.5, mean=1,sd=0)
-dnorm(x=.5, mean=0,sd=1)
+dnorm(x=5, mean=0,sd=1)
 
 dnorm(x=seq(-3,3,.1),mean=0,sd=1) # symetric                -> mean =0
 dnorm(x=seq(-3,3,.1),mean=0,sd=2) # symetric                -> mean =0
@@ -77,6 +77,7 @@ pnorm(-1.96)
 
 
 b= pnorm(5,4,2)-pnorm(2,2,1)
+b= pnorm(5,4,2)-pnorm(2,4,2)
 b
 pnorm(1.96)  
 
@@ -92,7 +93,7 @@ qnorm(p=.90,mean=178,sd=6)
 qnorm(p=.95,mean=178,sd=6)
 qnorm(p=.98,mean=178,sd=6)
 
-qnorm(p=seq(.1,1,.1),mean=0,sd=1)
+qnorm(p=seq(0,1,.1),mean=0,sd=1)
 qnorm(p=seq(.8,.99,.01),mean=100,sd=1)
 
 qnorm(0.025)
@@ -109,5 +110,6 @@ x
 x=rnorm(10) # different
 x
 set.seed(1) # previous first one
-x=rnorm(10)
+x=rbinom(10,5,.5)
+x=rpois(10,5)
 x

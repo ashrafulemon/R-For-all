@@ -8,14 +8,12 @@ for( i in 1:(n-1)){
 }
 
 x=c(s)
-
 n1=length(x)
 n1
-
 count1= 0
 
 for (i in 1:n1){
-  lt= unlist(strsplit(x[i],""))
+  lt= unlist(strsplit(x[i],""))  #lt[[1]][3]=="h"
   count2=0;
   for(j in 1:n){
     if(lt[j]=="h"){
@@ -26,6 +24,6 @@ for (i in 1:n1){
     count1=count1+1
   }
 }
-p= count1/8
+p= count1/n1
 p
 

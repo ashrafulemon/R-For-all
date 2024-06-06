@@ -4,4 +4,7 @@ z=20
 x
 y
 
+
+pie(c(x,y,z))
+pie(c(x,y,z),c("x","y","z"))
 pie(c(x,y,z),c("x","y","z"),main="pic chart")

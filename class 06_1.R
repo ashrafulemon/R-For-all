@@ -26,7 +26,7 @@ lst4
 lst4[[1]]=c("aaa","sdssss","jjk")                  
 lst4
 #lst4[[1]][1]=c("a","sd")      #not work , [[]] [[]] = c()  ok, or [[]][]=list(c())        
-lst4[[1]][1]=list(c("a","sd"))                   
+lst4[[1]][1]=list(c("a","sd"))          #my code   ok      
 lst4[[1]][[1]]=c("aaa","ssss") 
 lst4
 

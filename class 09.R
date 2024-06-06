@@ -1,12 +1,13 @@
 y = scan()
 
 data()
-df= BOD
-df[1:5,]
-View(df)
-head(df)
-tail(df)
-
+df1= iris
+df1[1:6,]
+View(df1)
+head(df1)
+tail(df1)
+nrow(df1)
+ncol(df1)
 
 if(4>2){
    print(2323)
@@ -27,7 +28,7 @@ if(a<b){
 }
 
 max2=b
-sprintf("this is the maximum value %d",max2)
+sprintf("this is the maximum value %d",max2)# ok
 sprintf("this is the maximum value %d ok ok",max2)
 print("this is the maximum value ",max2) #not ok
 cat("this is the maximum value ",max2)

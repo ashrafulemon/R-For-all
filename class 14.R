@@ -1,14 +1,17 @@
+#empirical
+
 N_head= 0
 N_toss= 100
 sample_space= c("H","T")
-alloutcome= NULL
+#alloutcome= c()
 for(i in 1:N_toss){
   outcome= sample(sample_space,1)
-  alloutcome[i]=outcome
+  #alloutcome[i]=outcome
   if(outcome=="H"){
     N_head= N_head+1
   }
 }
+#sum(alloutcome=="H")
 p =  N_head/N_toss
 p
 
@@ -23,7 +26,8 @@ oc= NULL
 for(i in 1:n){
   out= sample(ss,1)
   oc[i]=out
-  if(out %in% expected_outcome){
+  #if(out %in% expected_outcome){
+  if(out==1 | out == 5 | out==3){
     odd= odd+1
   }
 }

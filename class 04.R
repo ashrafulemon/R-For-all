@@ -11,14 +11,22 @@ z=cbind(1,a,b)
 z
 
 A <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
-
+A
+A <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3,byrow=T)
+A
+A <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3, byrow=F)
+A
 # Transpose the matrix
 A_transposed <- t(A)
-
+A_transposed
 
 state= c("tas","sa","asds","dsj")
 statef= factor(state)
+state
 incomes=c(60,49,36,90)
+
+mean_factor = tapply(incomes,statef,mean)
+cut(incomes,breaks=35+10*(0:3))
 incomef= factor(cut(incomes,breaks=35+10*(0:3)))  #how to work cut and factor?
 
 incomef
